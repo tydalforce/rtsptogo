@@ -90,7 +90,7 @@ class FFMPEG:
 
     def build_command(self):
         command = []
-        command.extend('/usr/bin/ffmpeg -i -'.split())
+        command.extend('/opt/local/bin/ffmpeg -i -'.split())
         address = self.session['client_address']
         if 'video_port' in self.session:
             port = self.session['video_port'].split('-')[0]
@@ -99,7 +99,7 @@ class FFMPEG:
             command.append('rtp://%s:%s' % (address, port))
         if 'audio_port' in self.session:
             port = self.session['audio_port'].split('-')[0]
-            command.extend('-flags +global_header -re -acodec libfaac -vn -f rtp'.split())
+            command.extend('-flags +global_header -re -acodec aac -vn -f rtp'.split())
             command.append('rtp://%s:%s' % (address, port))
             command.append('-newaudio')
 
