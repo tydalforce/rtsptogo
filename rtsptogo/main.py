@@ -9,6 +9,9 @@ import rtsptogo.config
 import rtsptogo.discover as discover
 from rtsptogo.web_app import app
 from rtsptogo.rtspd import RSTPServer, RSTPHandler
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 rtspd_server = None
 httpd_server = None
