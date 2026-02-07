@@ -90,7 +90,7 @@ class FFMPEG:
 
     def build_command(self):
         command = []
-        command.extend('/opt/local/bin/ffmpeg -i -'.split())
+        command.extend('/opt/local/bin/ffmpeg8 -i -'.split())
         address = self.session['client_address']
         if 'video_port' in self.session:
             port = self.session['video_port'].split('-')[0]
